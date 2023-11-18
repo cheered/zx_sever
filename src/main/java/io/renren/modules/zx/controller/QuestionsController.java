@@ -51,13 +51,16 @@ public class QuestionsController {
 
 
     /**
-     * 信息
+     * 信息展示
      */
     @RequestMapping("/info/{id}")
     @RequiresPermissions("zx:questions:info")
     public R info(@PathVariable("id") Long id){
+        // 通过ID查询到question对象
 		QuestionsEntity questions = questionsService.getById(id);
+		// 构建一个QuestionEntity的查询对象
         QueryWrapper<OptionsEntity> queryWrapper = new QueryWrapper<>();
+        // 查询拥有当前这个question_id的对象
         queryWrapper.eq("question_id", id);
         List<OptionsEntity> list = optionsService.list(queryWrapper);
         questions.setOptions(list);
@@ -70,12 +73,15 @@ public class QuestionsController {
     @RequestMapping("/save")
     @RequiresPermissions("zx:questions:save")
     public R save(@RequestBody QuestionsEntity questions){
-        System.out.println(questions.toString());
+        // System.out.println(questions.toString());
+        // 保存question对象
 		questionsService.save(questions);
         for (OptionsEntity op:questions.getOptions()) {
+            // 将当前题目ID保存到涉及的四个选项中
             op.setQuestionId(questions.getId());
             optionsService.save(op);
         }
+
         return R.ok();
     }
 

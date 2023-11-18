@@ -1,10 +1,13 @@
 package io.renren.modules.zx.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+
 import lombok.Data;
 
 /**
@@ -36,6 +39,13 @@ public class QuestionnairesEntity implements Serializable {
 	 * 问卷面向的业务类型
 	 */
 	private Integer businessType;
+
+	/**
+	 * 题目内容
+	 */
+	@TableField(exist = false)
+	private List<QuestionsEntity> questions;
+
 	/**
 	 * 创建时间
 	 */
@@ -48,5 +58,7 @@ public class QuestionnairesEntity implements Serializable {
 	 * 逻辑删除标志
 	 */
 	private Integer isDeleted;
+
+
 
 }
