@@ -23,15 +23,19 @@ public class QuestionnairesQuestionsEntity implements Serializable {
 	 * 
 	 */
 	@TableId
-	private Long id;
+	private Long detailId;
 	/**
-	 * 问卷ID
+	 * 答卷记录ID
 	 */
-	private Long questionnaireId;
+	private Long responseId;
 	/**
 	 * 题目ID
 	 */
 	private Long questionId;
+	/**
+	 * 选项ID
+	 */
+	private Long optionId;
 	/**
 	 * 创建时间
 	 */

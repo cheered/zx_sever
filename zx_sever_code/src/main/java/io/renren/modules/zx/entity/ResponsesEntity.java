@@ -23,7 +23,7 @@ public class ResponsesEntity implements Serializable {
 	 * 
 	 */
 	@TableId
-	private Long id;
+	private Long responsesId;
 	/**
 	 * 用户ID
 	 */
@@ -36,6 +36,10 @@ public class ResponsesEntity implements Serializable {
 	 * 问卷得分
 	 */
 	private Integer totalScore;
+	/**
+	 * 问卷得分
+	 */
+	private RiskEnum riskLevel;
 	/**
 	 * 创建时间
 	 */

@@ -23,7 +23,7 @@ public class OptionsEntity implements Serializable {
 	 * 
 	 */
 	@TableId
-	private Long id;
+	private Long optionId;
 	/**
 	 * 题目ID
 	 */

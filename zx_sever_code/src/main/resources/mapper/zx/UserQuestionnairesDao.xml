@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.zx.dao.UserQuestionnairesDao">
+    <select id="getQuestionnaires" resultType="io.renren.modules.zx.entity.QuestionnairesEntity">
+        select questionnaire_id, name, customer_type, business_type
+        from questionnaires
+        where business_type = #{dto.businessType}
+    </select>
+
+    <select id="getQuestions" resultType="io.renren.modules.zx.entity.QuestionsEntity">
+        select question_id, questionnaire_id, content
+        from questions
+        where questionnaire_id = #{dto.questionnaireId}
+    </select>
+
+    <insert id="submitQuestionnaires">
+        insert into responses(user_id, questionnaire_id, total_score, risk_level, create_time)
+        values (#{dto.userId}, #{dto.questionnaireId}, #{dto.totalScore}, #{dto.riskLevel}, now())
+    </insert>
+
+    <select id="getResponses" resultType="io.renren.modules.zx.entity.ResponsesEntity">
+        select user_id, questionnaire_id, total_score, risk_level, create_time
+        from responses
+    </select>
+
+    <select id="getOptions" resultType="io.renren.modules.zx.entity.OptionsEntity">
+        select option_id, content
+        from options
+        where question_id = #{dto.questionId}
+    </select>
+
+    <select id="getQuestionScore" resultType="java.lang.Integer">
+        select score
+        from options
+        where question_id = #{dto.questionId} and option_id = #{dto.optionId}
+    </select>
+</mapper>

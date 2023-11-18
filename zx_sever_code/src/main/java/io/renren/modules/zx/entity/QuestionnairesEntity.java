@@ -23,7 +23,7 @@ public class QuestionnairesEntity implements Serializable {
 	 * 
 	 */
 	@TableId
-	private Long id;
+	private Long questionnaireId;
 	/**
 	 * 问卷名称
 	 */
