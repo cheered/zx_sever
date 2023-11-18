@@ -18,9 +18,14 @@ public class QuestionsServiceImpl extends ServiceImpl<QuestionsDao, QuestionsEnt
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
+        String questionContentKey = (String) params.get("questionContentKey");
+        QueryWrapper<QuestionsEntity> queryWrapper = new QueryWrapper<QuestionsEntity>();
+        if (null != questionContentKey) {
+            queryWrapper.like("question_content", questionContentKey);
+        }
         IPage<QuestionsEntity> page = this.page(
                 new Query<QuestionsEntity>().getPage(params),
-                new QueryWrapper<QuestionsEntity>()
+                queryWrapper
         );
 
         return new PageUtils(page);

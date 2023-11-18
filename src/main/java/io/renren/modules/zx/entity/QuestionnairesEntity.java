@@ -44,7 +44,7 @@ public class QuestionnairesEntity implements Serializable {
 	 * 题目内容
 	 */
 	@TableField(exist = false)
-	private List<QuestionsEntity> questions;
+	private List<QuestionsEntity> questionList;
 
 	/**
 	 * 创建时间
