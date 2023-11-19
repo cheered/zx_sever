@@ -1,6 +1,5 @@
 package io.renren.modules.generator.entity;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -8,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-public class ZShowdetailsEntity implements Serializable {
+public class ZSYShowdetailsEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -18,7 +17,7 @@ public class ZShowdetailsEntity implements Serializable {
     /**
      *
      */
-    private List<ZShowquesion> questions;
+    private List<ZSYShowquesion> questions;
 
 
     private Date createDate;

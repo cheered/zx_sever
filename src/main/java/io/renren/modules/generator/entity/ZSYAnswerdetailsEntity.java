@@ -2,46 +2,46 @@ package io.renren.modules.generator.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+import lombok.Data;
 
 /**
- * 
+ * 答题详细记录表，与题目表相关联
  * 
  * @author chenshun
  * @email sunlightcs@gmail.com
- * @date 2023-11-18 15:27:03
+ * @date 2023-11-19 15:06:08
  */
 @Data
-@TableName("questionnaires")
-public class ZQuestionnairesEntity implements Serializable {
+@TableName("answerdetails")
+public class ZSYAnswerdetailsEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * 
 	 */
 	@TableId
-	private Integer questionnaireId;
+	private Integer detailId;
 	/**
-	 * 问卷名称
+	 * 
 	 */
-	private String name;
+	private Integer responseId;
 	/**
-	 * 客户类型
+	 * 
 	 */
-	private String customerType;
+	private Integer questionId;
 	/**
-	 * 业务类型
+	 * 
 	 */
-	private String businessType;
+	private Integer optionId;
 	/**
-	 * 创建时间
+	 * 
 	 */
 	private Date createtime;
 	/**
-	 * 更新时间
+	 * 
 	 */
 	private Date updatetime;
 	/**

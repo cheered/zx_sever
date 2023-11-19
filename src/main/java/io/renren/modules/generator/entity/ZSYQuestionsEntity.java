@@ -2,21 +2,21 @@ package io.renren.modules.generator.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+import lombok.Data;
 
 /**
- * 
+ * 问题表
  * 
  * @author chenshun
  * @email sunlightcs@gmail.com
- * @date 2023-11-18 15:27:03
+ * @date 2023-11-19 15:06:09
  */
 @Data
 @TableName("questions")
-public class ZQuestionsEntity implements Serializable {
+public class ZSYQuestionsEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -29,19 +29,15 @@ public class ZQuestionsEntity implements Serializable {
 	 */
 	private Integer questionnaireId;
 	/**
-	 * 题目内容
+	 * 
 	 */
 	private String content;
 	/**
-	 * 题目类型
-	 */
-	private String questionType;
-	/**
-	 * 创建时间
+	 * 
 	 */
 	private Date createtime;
 	/**
-	 * 更新时间
+	 * 
 	 */
 	private Date updatetime;
 	/**
