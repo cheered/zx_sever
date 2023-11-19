@@ -3,12 +3,14 @@ package io.renren.modules.zx.service.impl;
 import io.renren.modules.zx.dao.UserQuestionnairesDao;
 import io.renren.modules.zx.entity.*;
 import io.renren.modules.zx.service.UserQuetstionnairesService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class UserQuestionnairesServiceImpl implements UserQuetstionnairesService {
+    @Autowired
     private UserQuestionnairesDao userQuestionnairesDao;
 
     @Override

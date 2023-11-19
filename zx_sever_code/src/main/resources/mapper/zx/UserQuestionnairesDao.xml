@@ -21,10 +21,10 @@
 
     <select id="getResponses" resultType="io.renren.modules.zx.entity.ResponsesEntity">
         select user_id, questionnaire_id, total_score, risk_level, create_time
-        from responses
+        from response
     </select>
 
-    <select id="getOptions" resultType="io.renren.modules.zx.entity.OptionsEntity">
+    <select id="getQuestionsOptions" resultType="io.renren.modules.zx.entity.OptionsEntity">
         select option_id, content
         from options
         where question_id = #{dto.questionId}

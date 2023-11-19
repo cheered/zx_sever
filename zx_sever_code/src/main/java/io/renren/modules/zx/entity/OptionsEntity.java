@@ -15,7 +15,7 @@ import lombok.Data;
  * @date 2023-11-17 21:46:09
  */
 @Data
-@TableName("zx_options")
+@TableName("options")
 public class OptionsEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 

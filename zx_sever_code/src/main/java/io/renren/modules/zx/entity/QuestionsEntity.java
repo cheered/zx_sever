@@ -18,7 +18,7 @@ import lombok.Data;
  * @date 2023-11-17 21:46:09
  */
 @Data
-@TableName("zx_questions")
+@TableName("questions")
 public class QuestionsEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -26,11 +26,13 @@ public class QuestionsEntity implements Serializable {
 	 * 
 	 */
 	@TableId
-	private Long questionsId;
+	private Long questionId;
+
+	private Long questionnaireId;
 	/**
 	 * 题目内容
 	 */
-	private String questionContent;
+	private String content;
 
 	@TableField(exist = false)
 	private List<OptionsEntity> options;

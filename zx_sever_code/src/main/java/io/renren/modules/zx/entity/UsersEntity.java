@@ -15,7 +15,7 @@ import lombok.Data;
  * @date 2023-11-17 21:46:09
  */
 @Data
-@TableName("zx_users")
+@TableName("users")
 public class UsersEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -39,7 +39,7 @@ public class UsersEntity implements Serializable {
 	/**
 	 * 用户类型
 	 */
-	private Integer userType;
+	private Integer CustomerType;
 	/**
 	 * 创建时间
 	 */

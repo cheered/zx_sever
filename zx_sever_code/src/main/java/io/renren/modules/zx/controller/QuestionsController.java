@@ -73,7 +73,7 @@ public class QuestionsController {
         System.out.println(questions.toString());
 		questionsService.save(questions);
         for (OptionsEntity op:questions.getOptions()) {
-            op.setQuestionId(questions.getId());
+            op.setQuestionId(questions.getQuestionId());
             optionsService.save(op);
         }
         return R.ok();
