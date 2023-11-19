@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Data
-public class ZShowquesion implements Serializable {
+public class ZSYShowquesion implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
      *
@@ -18,7 +18,7 @@ public class ZShowquesion implements Serializable {
 
     private String quetions;
 
-    private List<ZOptionsEntity> options;
+    private List<ZSYOptionsEntity> options;
 
 
 

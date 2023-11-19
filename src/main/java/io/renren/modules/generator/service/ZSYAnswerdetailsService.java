@@ -2,21 +2,19 @@ package io.renren.modules.generator.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import io.renren.common.utils.PageUtils;
-import io.renren.modules.generator.entity.ZResponsesEntity;
+import io.renren.modules.generator.entity.ZSYAnswerdetailsEntity;
 
-import java.util.List;
 import java.util.Map;
 
 /**
- * 
+ * 答题详细记录表，与题目表相关联
  *
  * @author chenshun
  * @email sunlightcs@gmail.com
- * @date 2023-11-18 10:23:53
+ * @date 2023-11-19 15:06:08
  */
-public interface ZResponsesService extends IService<ZResponsesEntity> {
+public interface ZSYAnswerdetailsService extends IService<ZSYAnswerdetailsEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
-    PageUtils queryPage(Map<String, Object> params, List<?> list);
 }
 
